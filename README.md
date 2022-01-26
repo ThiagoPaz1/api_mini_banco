@@ -1,2 +1,2 @@
-# api_mini_banco
-API que trás algumas funcionalidades de um banco.
+# Seja bem vindo!
+API que trás algumas funcionalidades de gerenciamento de um banco.

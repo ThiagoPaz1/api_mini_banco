@@ -14,7 +14,7 @@ const validateRegister = (req, res, next) => {
     return res.status(400).send('Nome não esta de acordo com os padrões solicitados.'); 
   }
 
-  if (!queriesClient.findName(name)) {
+  if (queriesClient.findName(name)) {
     return res.status(400).send('Nome já cadastrado.');
   }
 
@@ -22,7 +22,7 @@ const validateRegister = (req, res, next) => {
     return res.status(400).send('CPF não é válido.');
   }
 
-  if (!queriesClient.findCpf(cpf)) {
+  if (queriesClient.findCpf(cpf)) {
     return res.status(400).send('CPF já cadastrado.');
   }
 
@@ -49,7 +49,7 @@ const responseRegister = async (req, res) => {
 
     return res.status(200).send('Registro realizado com sucesso.');
   } catch (error) {
-    return res.status(400).send(error);
+    return res.send(error);
   }
 }
 
